@@ -1,6 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 #container {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    flex-flow: column;
+    justify-content: center;
     align-items: center;
+}
+
+.row-box {
+    display: flex;
+    flex-flow: row nowrap;
+    
+}
+
+.grid-square {
+    border: 4px solid black;
+    height: 48px;
+    width: 48px;
 }
