@@ -15,6 +15,9 @@ function populateBox(box) {
     {
         const boxElement = document.createElement('div');
         boxElement.setAttribute('class', 'grid-square');
+        boxElement.addEventListener("mouseover", () => {
+            boxElement.style.backgroundColor = "black";
+        });
 
         box.appendChild(boxElement);
     }
@@ -32,4 +35,16 @@ function populatePage() {
     }
 }
 
+function mouseOver(divToChange) {
+    divToChange.style.background = 'blue';
+    console.log("Mouse over function called");
+}
+
+function mouseOff(divToChange)
+{
+    divToChange.style.background = 'black';
+}
+
+
 populatePage();
+
