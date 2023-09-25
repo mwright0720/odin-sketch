@@ -1,4 +1,4 @@
-const GRID_SIZE = 16;
+var GRID_SIZE = 16;
 
 let container = document.querySelector('#container');
 // Generates a GRID_SIZR x GRID_SIZE box of black squares
@@ -37,13 +37,35 @@ function populatePage() {
 
 function mouseOver(divToChange) {
     divToChange.style.background = 'blue';
-    console.log("Mouse over function called");
 }
 
 function mouseOff(divToChange)
 {
     divToChange.style.background = 'black';
 }
+
+function clearCanvas() {
+    let squares = document.querySelectorAll('.grid-square')
+    squares.forEach((e) => e.remove());
+}
+
+function promptUser() {
+    let userChoice = prompt("Enter a new size for the grid, max 100");
+    if (userChoice >= 100 || userChoice <=0)
+    {
+        alert("Invalid")
+    }
+
+    else {
+        GRID_SIZE = userChoice;
+        clearCanvas();
+        populatePage();
+        
+    }
+
+}
+
+
 
 
 populatePage();
